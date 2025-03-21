@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concorso ENBIC - Sicurezza e Innovazione</title>
+    <style>
+        /* Stili coerenti con la pagina principale */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+
+        .content {
+            margin-left: 0;
+            padding: 20px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        .content.active {
+            margin-left: 250px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        h1 {
+            color: #0088f7;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-family: 'Georgia', serif;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0088f7;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #005bb5;
+            transform: scale(1.05);
+        }
+
+        /* Immagini decorative */
+        .decorative-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sidebar identica a main.html */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            transition: left 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #0088f7;
+            transform: translateX(10px);
+        }
+
+        /* Bottone per aprire/chiudere il menu */
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar identica a main.html -->
+<aside class="sidebar">
+    <h2 style="font-size: 24px; margin-bottom: 30px; color: white;">Menu</h2>
+    <nav>
+        <ul style="list-style: none; padding: 0; line-height: 2;">
+            <li><a href="main.html" style="color: white; text-decoration: none;">?? Home</a></li>
+            <li><a href="memoria.html" style="color: white; text-decoration: none;">?? Informazioni</a></li>
+            <li><a href="sicurezzalavoro.html" style="color: white; text-decoration: none;">?? Regolamento</a></li>
+            <li><a href="cambiare.html" style="color: white; text-decoration: none;">?? Partecipa</a></li>
+            <li><a href="concorso.html" style="color: white; text-decoration: none;">?? Concorso ENBIC</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<!-- Bottone per aprire/chiudere il menu -->
+<div class="menu-toggle" onclick="toggleSidebar()">?</div>
+
+<!-- Contenuto principale -->
+<div class="content">
+    <div class="section">
+        <h1>Concorso ENBIC - Sicurezza e Innovazione</h1>
+        <p>Il Concorso ENBIC è un'iniziativa dedicata alla promozione della sicurezza e dell'innovazione nel mondo del lavoro. Partecipa e contribuisci a creare un futuro più sicuro e sostenibile.</p>
+        
+        <!-- Immagine decorativa -->
+        <img src="https://via.placeholder.com/600x300" alt="Concorso ENBIC" class="decorative-image">
+        
+        <h2>Obiettivi del Concorso</h2>
+        <p>L'obiettivo principale del concorso è sensibilizzare i partecipanti sull'importanza della sicurezza sul lavoro e promuovere soluzioni innovative per prevenire incidenti.</p>
+        
+        <h2>Chi può Partecipare</h2>
+        <p>Il concorso è aperto a studenti, professionisti e aziende che desiderano presentare progetti innovativi legati alla sicurezza sul lavoro.</p>
+        
+        <!-- Immagine decorativa -->
+        <img src="https://via.placeholder.com/600x300" alt="Partecipanti" class="decorative-image">
+        
+        <h2>Premi e Opportunità</h2>
+        <p>I vincitori del concorso riceveranno premi in denaro e avranno l'opportunità di collaborare con aziende leader nel settore della sicurezza.</p>
+        
+        <a href="cambiare.html" class="button">Partecipa Ora</a>
+    </div>
+</div>
+
+<script>
+    // Funzione per aprire/chiudere la sidebar
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        const content = document.querySelector('.content');
+        sidebar.classList.toggle('active');
+        content.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>

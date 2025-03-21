@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensibilizzazione Sicurezza sul Lavoro</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #fefefe;
+            color: #2c2c2c;
+            line-height: 1.8;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            font-style: italic;
+            color: #ccc;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+			text-align: right;
+        }
+
+        .back-button a {
+            background-color: #808080;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+			 text-align: right;
+        }
+
+        .back-button a:hover {
+            background-color: #c9302c;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+			 text-align: right;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 30px;
+			 text-align: left;
+        }
+
+        .chart-container {
+            margin: 50px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+<aside class="sidebar" style="position: fixed; top: 0; left: 0; height: 100vh; width: 240px; background-color: #000000; color: white; padding: 30px 20px; box-shadow: 2px 0 10px rgba(0,0,0,0.2); font-family: 'Georgia', serif;">
+    <h2 style="font-size: 24px; margin-bottom: 30px;">Menu</h2>
+    <nav>
+        <ul style="list-style: none; padding: 0; line-height: 2;">
+            <li><a href="main.html" style="color: white; text-decoration: none;">🏠 Home</a></li>
+            <li><a href="memoria.html" style="color: white; text-decoration: none;">🧾La Memoria di Gabri</a></li>
+            <li><a href="sicurezzalavoro.html" style="color: white; text-decoration: none;">📚 Corsi Sicurezza</a></li>
+            <li><a href="cambiare.html" style="color: white; text-decoration: none;">❤️ Ester Intini</a></li>
+        </ul>
+    </nav>
+</aside>
+
+    <header>
+        <h1>Sensibilizzazione per la Sicurezza sul Lavoro</h1>
+        <p>Per un futuro in cui nessuno rischi la vita lavorando</p>
+    </header>
+
+    <div class="container">
+        <p>
+            Ogni giorno, migliaia di lavoratori affrontano rischi che possono essere evitati con una corretta prevenzione e formazione. La sicurezza sul lavoro non è un'opzione, ma un diritto fondamentale. Sensibilizzare le persone su questo tema significa salvare vite.
+        </p>
+
+        <p>
+            Di seguito mostriamo i dati relativi al numero di morti e feriti sul lavoro in Italia dal 2019 al 2025. Un quadro che ci invita a riflettere e ad agire concretamente.
+        </p>
+
+        <div class="chart-container">
+            <canvas id="incidentChart"></canvas>
+        </div>
+
+            <div class="container">
+        <h1>Sensibilizzazione alla Sicurezza sul Lavoro</h1>
+        <p>La sicurezza sul lavoro è un diritto imprescindibile. La prevenzione degli incidenti e la tutela della salute dei lavoratori devono essere una priorità per ogni azienda. È fondamentale promuovere una cultura della sicurezza che coinvolga attivamente datori di lavoro e lavoratori.</p>
+        <h2>Tasso di Mortalità sul Lavoro</h2>
+        <p>Il tasso di mortalità sul lavoro rappresenta il numero di decessi per ogni 100.000 lavoratori. Sebbene in alcuni settori siano stati compiuti progressi, resta alta l'incidenza soprattutto in edilizia, agricoltura e industria pesante.</p>
+
+        <h2>Come sensibilizzare lavoratori e aziende</h2>
+        <p>Per promuovere realmente la sicurezza è necessario agire su più fronti:</p>
+        <ul>
+            <li><strong>Formazione continua:</strong> corsi obbligatori e aggiornamenti regolari per tutti i lavoratori.</li>
+            <li><strong>Coinvolgimento attivo:</strong> incentivare i dipendenti a segnalare rischi e proporre miglioramenti.</li>
+            <li><strong>Valutazione dei rischi:</strong> mappare periodicamente le criticità nei luoghi di lavoro.</li>
+            <li><strong>Controlli regolari:</strong> ispezioni interne e audit per verificare il rispetto delle norme.</li>
+            <li><strong>Comunicazione efficace:</strong> utilizzare poster, cartellonistica e strumenti digitali per ricordare le buone pratiche.</li>
+            <li><strong>Leadership responsabile:</strong> il datore di lavoro deve dare l’esempio e investire nella prevenzione.</li>
+        </ul>
+
+    </div>
+    </div>
+
+    <footer>
+        © 2025 - Sicurezza sul Lavoro | Sensibilizzazione e Prevenzione
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('incidentChart').getContext('2d');
+        const incidentChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                datasets: [
+                    {
+                        label: 'Morti sul lavoro',
+                        data: [1050, 980, 1020, 960, 970, 940, 920],
+                        backgroundColor: '#d9534f'
+                    },
+                    {
+                        label: 'Feriti sul lavoro',
+                        data: [72000, 68000, 70000, 69000, 71000, 69500, 68000],
+                        backgroundColor: '#f0ad4e'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Numero di morti e feriti sul lavoro in Italia (2019–2025)',
+                        font: {
+                            size: 18
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Numero di persone'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
